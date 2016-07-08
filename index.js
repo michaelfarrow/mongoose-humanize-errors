@@ -13,7 +13,8 @@ module.exports = exports = function humanizeErrorsPlugin(schema, options) {
 
   schema.post('validate', function(doc) {
     if(doc.errors){
-      _.each(doc.errors, function(error, field) {
+      Object.keys(doc.errors).forEach(function(field) {
+        var error = doc.errors[field];
         var properties = error.properties;
         // If we don't have a message on the schema.
         if(!Array.isArray(doc.schema.tree[field][error.properties.type])){
