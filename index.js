@@ -1,9 +1,13 @@
 
 var messages = {
-  required: '{PATH} is required.',
-  min: '{PATH} below minimum.',
-  max: '{PATH} above maximum.',
-  enum: '{PATH} not an allowed value.',
+  required: '{PATH} is required',
+  min: '{PATH} below minimum',
+  max: '{PATH} above maximum',
+  enum: '{PATH} not an allowed value',
+  unique: '{PATH} not a unique value',
+  // until PR here is merged:
+  // <https://github.com/matteodelabre/mongoose-beautiful-unique-validation/pull/40>
+  'Duplicate value': '{PATH} not a unique value'
 };
 
 module.exports = exports = function humanizeErrorsPlugin(schema, options) {
